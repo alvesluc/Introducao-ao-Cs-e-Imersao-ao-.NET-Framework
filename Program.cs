@@ -12,9 +12,18 @@ namespace ConsoleApp1
 
             Console.WriteLine(name + " is " + age + " years old.");
 
-            if (isLearning)
-                Console.WriteLine("Trying my best!");
-            
+            try
+            {
+                if (isLearning)
+                    Console.WriteLine("Trying my best!");
+                else
+                    throw new Exception("Something went wrong.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             Console.ReadLine();
         }
     }
