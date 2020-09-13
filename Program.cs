@@ -6,16 +6,12 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            double doublePrecision = 1.123412341234d;
-            float floatPrecision = 1.1234123412341234f;
-            decimal decimalPrecision = 1.1234123412341234m;
+            DateTime date = new DateTime(2001, 5, 23);
 
-            Console.WriteLine(doublePrecision);
-            Console.WriteLine(floatPrecision);
-            Console.WriteLine(decimalPrecision);
-
-            // var numbers = NumberCollection();
-            // Interable(numbers);
+            Console.WriteLine(date.ToString("dd/MM/yyyy"));
+            Console.WriteLine(date.ToLongDateString());
+            Console.WriteLine((DateTime.Today - new DateTime(2015, 1, 1)).Days);
+            Console.WriteLine(DateTime.Today - TimeSpan.FromDays(2));
 
             Console.ReadLine();
         }
@@ -33,6 +29,18 @@ namespace ConsoleApp1
         }
     }
 }
+
+
+// var numbers = NumberCollection();
+// Interable(numbers);
+
+// double doublePrecision = 1.123412341234d;
+// float floatPrecision = 1.1234123412341234f;
+// decimal decimalPrecision = 1.1234123412341234m;
+
+// Console.WriteLine(doublePrecision);
+// Console.WriteLine(floatPrecision);
+// Console.WriteLine(decimalPrecision);
 
 // string name = "Lucas";
 // int age = 19;
