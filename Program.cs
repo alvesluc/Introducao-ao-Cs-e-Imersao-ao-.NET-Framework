@@ -8,50 +8,32 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            var names = new string[]
-            {
-                "Lucas",
-                "Luan",
-                "Bonfim",
-                "Sérgio"
-            };
+            Dictionary<string, string> capitals = new Dictionary<string, string>();
 
-            foreach (var name in names)
+            capitals.Add("PE", "Recife");
+            capitals.Add("PB", "João Pessoa");
+            capitals.Add("SP", "São Paulo");
+            capitals.Add("RJ", "Rio de Janeiro");
+
+            Console.WriteLine(capitals["PB"]);
+
+            var capitalWithStartingR = capitals.Values.Where(capital => capital.StartsWith("R"));
+
+            foreach (var capital in capitalWithStartingR)
             {
-                Console.WriteLine(name);
+                Console.WriteLine(capital);
             }
 
-            var cities = new List<string>
-            {
-                "Goiana",
-                "Recife",
-                "João Pessoa"
-            };
+            Dictionary<string, List<string>> citiesFromState = new Dictionary<string, List<string>>();
 
-            cities.Add("São Paulo");
-            cities.Add("Rosa Nova");
-            cities.Add("São José");
+            citiesFromState.Add("PE", new List<string> { "Recife", "Goiana", "Carpina", "Condado" });
 
-            foreach (var city in cities)
+            List<string> citiesFromPernambuco = citiesFromState["PE"];
+
+            foreach (var city in citiesFromPernambuco)
             {
                 Console.WriteLine(city);
             }
-
-            var filteredWithStartingR = from city in cities
-                            where city.StartsWith("R")
-                            select city;
-
-            foreach (var city in filteredWithStartingR)
-            {
-                Console.WriteLine(city);
-            };
-
-            var filteredWithStartingS = cities.Where(city => city.StartsWith("S"));
-
-            foreach (var city in filteredWithStartingS)
-            {
-                Console.WriteLine(city);
-            };
 
             Console.ReadLine();
         }
@@ -69,6 +51,51 @@ namespace ConsoleApp1
         }
     }
 }
+
+// var names = new string[]
+//             {
+//                 "Lucas",
+//                 "Luan",
+//                 "Bonfim",
+//                 "Sérgio"
+//             };
+
+// foreach (var name in names)
+// {
+//     Console.WriteLine(name);
+// }
+
+// var cities = new List<string>
+//             {
+//                 "Goiana",
+//                 "Recife",
+//                 "João Pessoa"
+//             };
+
+// cities.Add("São Paulo");
+// cities.Add("Rosa Nova");
+// cities.Add("São José");
+
+// foreach (var city in cities)
+// {
+//     Console.WriteLine(city);
+// }
+
+// var filteredWithStartingR = from city in cities
+//                             where city.StartsWith("R")
+//                             select city;
+
+// foreach (var city in filteredWithStartingR)
+// {
+//     Console.WriteLine(city);
+// };
+
+// var filteredWithStartingS = cities.Where(city => city.StartsWith("S"));
+
+// foreach (var city in filteredWithStartingS)
+// {
+//     Console.WriteLine(city);
+// };
 
 // object[] parameters = { "Paraíba", 2020, 3944000, 56585 };
 
