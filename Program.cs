@@ -6,12 +6,10 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            DateTime date = new DateTime(2001, 5, 23);
+            object[] parameters = { "Paraíba", 2020, 3944000, 56585 };
 
-            Console.WriteLine(date.ToString("dd/MM/yyyy"));
-            Console.WriteLine(date.ToLongDateString());
-            Console.WriteLine((DateTime.Today - new DateTime(2015, 1, 1)).Days);
-            Console.WriteLine(DateTime.Today - TimeSpan.FromDays(2));
+            string formatted = String.Format("{0} em {1}: população {2}, área {3:N2} m2", parameters);
+            Console.WriteLine(formatted);
 
             Console.ReadLine();
         }
@@ -30,6 +28,12 @@ namespace ConsoleApp1
     }
 }
 
+// DateTime date = new DateTime(2001, 5, 23);
+
+// Console.WriteLine(date.ToString("dd/MM/yyyy"));
+// Console.WriteLine(date.ToLongDateString());
+// Console.WriteLine((DateTime.Today - new DateTime(2015, 1, 1)).Days);
+// Console.WriteLine(DateTime.Today - TimeSpan.FromDays(2));
 
 // var numbers = NumberCollection();
 // Interable(numbers);
