@@ -6,13 +6,16 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            string name = "Lucas";
-            int age = 19;
-            bool isLearning = true;
+            double doublePrecision = 1.123412341234d;
+            float floatPrecision = 1.1234123412341234f;
+            decimal decimalPrecision = 1.1234123412341234m;
 
-            var numbers = NumberCollection();
+            Console.WriteLine(doublePrecision);
+            Console.WriteLine(floatPrecision);
+            Console.WriteLine(decimalPrecision);
 
-            Interable(numbers);
+            // var numbers = NumberCollection();
+            // Interable(numbers);
 
             Console.ReadLine();
         }
@@ -30,6 +33,11 @@ namespace ConsoleApp1
         }
     }
 }
+
+// string name = "Lucas";
+// int age = 19;
+// bool isLearning = true;
+
 
 // Console.WriteLine(name + " is " + age + " years old.");
 
