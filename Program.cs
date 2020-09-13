@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -6,10 +8,50 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            object[] parameters = { "Paraíba", 2020, 3944000, 56585 };
+            var names = new string[]
+            {
+                "Lucas",
+                "Luan",
+                "Bonfim",
+                "Sérgio"
+            };
 
-            string formatted = String.Format("{0} em {1}: população {2}, área {3:N2} m2", parameters);
-            Console.WriteLine(formatted);
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
+            }
+
+            var cities = new List<string>
+            {
+                "Goiana",
+                "Recife",
+                "João Pessoa"
+            };
+
+            cities.Add("São Paulo");
+            cities.Add("Rosa Nova");
+            cities.Add("São José");
+
+            foreach (var city in cities)
+            {
+                Console.WriteLine(city);
+            }
+
+            var filteredWithStartingR = from city in cities
+                            where city.StartsWith("R")
+                            select city;
+
+            foreach (var city in filteredWithStartingR)
+            {
+                Console.WriteLine(city);
+            };
+
+            var filteredWithStartingS = cities.Where(city => city.StartsWith("S"));
+
+            foreach (var city in filteredWithStartingS)
+            {
+                Console.WriteLine(city);
+            };
 
             Console.ReadLine();
         }
@@ -27,6 +69,11 @@ namespace ConsoleApp1
         }
     }
 }
+
+// object[] parameters = { "Paraíba", 2020, 3944000, 56585 };
+
+// string formatted = String.Format("{0} em {1}: população {2}, área {3:N2} m2", parameters);
+// Console.WriteLine(formatted);
 
 // DateTime date = new DateTime(2001, 5, 23);
 
